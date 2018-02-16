@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
+import { Alert } from 'react-native'
 import { Provider } from 'react-redux'
-import Expo from 'expo'
+import Expo, { Notifications } from 'expo'
 import { StyleProvider } from 'native-base';
 import { PersistGate } from 'redux-persist/lib/integration/react';
+import registerForNotifications from './services/push-notification';
 import getTheme from '../native-base-theme/components';
 import material from '../native-base-theme/variables/material';
 
@@ -20,6 +22,17 @@ class MainApp extends Component {
         });
         /* eslint-enable */
         this.setState({ isReady: true })
+
+        await registerForNotifications();
+        Notifications.addListener((notification) => {
+            const { data: { text }, origin } = notification;
+            if (origin === 'received' && text) {
+                Alert.alert('New Push Notification', text, [
+                    { text: 'OK' },
+                    { text: 'Cancel' }
+                ]);
+            }
+        });
     }
     render() {
         if (!this.state.isReady) {

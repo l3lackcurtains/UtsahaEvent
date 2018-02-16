@@ -19,17 +19,12 @@ import firebase from 'firebase';
 import { reactReduxFirebase, firebaseReducer } from 'react-redux-firebase';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import createSagaMiddleware from 'redux-saga'
 
+import rootSagas from './sagas'
+import rootReducers from './reducers'
 import AppNavigator from './AppNavigator'
-
-const firebaseConfig = {
-    apiKey: 'AIzaSyDLeUhygvMuV9G50mGruOEJ3ZxqcktkedI',
-    authDomain: 'utsahaevent-2f496.firebaseapp.com',
-    databaseURL: 'https://utsahaevent-2f496.firebaseio.com',
-    storageBucket: 'utsahaevent-2f496.appspot.com',
-    projectId: 'utsahaevent-2f496',
-    messagingSenderId: '238659759768'
-};
+import config from '../utils/config'
 
 // react-redux-firebase config
 const rrfConfig = {
@@ -38,7 +33,7 @@ const rrfConfig = {
 };
 
 if (!firebase.apps.length) {
-    firebase.initializeApp(firebaseConfig);
+    firebase.initializeApp(config.firebaseConfig);
 }
 
 const persistConfig = {
@@ -56,7 +51,10 @@ const navReducer = (state = initialState, action) => {
 const appReducer = combineReducers({
     nav: navReducer,
     firebase: persistReducer(persistConfig, firebaseReducer),
+    ...rootReducers
 });
+
+const sagaMiddleware = createSagaMiddleware()
 
 // Note: createReactNavigationReduxMiddleware must be run before createReduxBoundAddListener
 const middleware = createReactNavigationReduxMiddleware(
@@ -66,7 +64,7 @@ const middleware = createReactNavigationReduxMiddleware(
 
 const createStoreWithFirebase = compose(
     reactReduxFirebase(firebase, rrfConfig),
-    applyMiddleware(middleware)
+    applyMiddleware(middleware, sagaMiddleware)
 )(createStore);
 
 const addListener = createReduxBoundAddListener('root');
@@ -108,5 +106,7 @@ const AppWithNavigationState = connect(mapStateToProps)(App);
 const initialState2 = {};
 const store = createStoreWithFirebase(appReducer, initialState2);
 const persistor = persistStore(store);
+
+sagaMiddleware.run(rootSagas)
 
 export { store, AppWithNavigationState, persistor }
