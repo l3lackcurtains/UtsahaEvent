@@ -1,0 +1,77 @@
+{
+    "themeOne": {
+        "name": "Youth and Participation",
+        "data": {
+            "1" : {
+                "title" : "Sustainable Development Goals",
+                "time" : "5:30 AM to 7:00 AM",
+                "speakers" : "1) Tracy Hanson (USA)"
+            },
+            "2" : {
+                "title" : "Making a Youth Friendly Smart City",
+                "time" : "12:30 PM to 1:45 PM",
+                "speakers" : "1) Buddhi Raj Joshi (Dean, Faculty of  Engineering, Pokhara University)\n\n2) Dr. Ajay Thapa (Pokhara University, Ph.D in Development Planning)\n\n3) Prof. Dr. Kamani. K. K, CEO APCEO, Global Economic Adviser, Department of Higher Education, Govt. of Karnataka INDIA\nModerator: Mira Dhakal"
+            },
+            "3" : {
+                "title" : "Youth Participation in Politics",
+                "time" : "2:00 PM to 4:00 PM",
+                "speakers" : "1) Dr. Deepak Prakash Bhatta (Youth Leader, CPN UML)\n\n2) Pradip Poudel (Youth Leader, NC)\nModerator: Upendra Poudel\nExperience Sharing: Sarita Puri, Youth Leader, ANNFSU"
+            },
+            "4" : {
+                "title" : "Youth Participation in Development",
+                "time" : "4:30 PM to 6:30 PM",
+                "speakers" : "1) Ahmed Bari (WSDA, New Zealand)\n\n2) Zannatun N Eshita (Step-Up Foundation, Bangladesh)"
+            }
+        }
+    },
+    "themeTwo": {
+        "name": "Youth Environment and Sustainable Development",
+        "data": {
+            "1" : {
+                "title" : "Sustainable Development Goals",
+                "time" : "5:30 AM to 7:00 AM",
+                "speakers" : "1) Tracy Hanson (USA)"
+            },
+            "2" : {
+                "title" : "Decent Work and Economic Growth of the Youth",
+                "time" : "12:30 PM to 1:45 PM",
+                "speakers" : "1) Ahmed Bari (WSDA, New Zealand)\n\n2) Jerushia Mcdonald Hylton, USA"
+            },
+            "3" : {
+                "title" : "Quality Education for Empowerment and Employment",
+                "time" : "2:00 PM to 4:00 PM",
+                "speakers" : "1) Ahmed Bari (WSDA, New Zealand)\n\n2) Cathy Cathy Sheppard (WSDA, New Zealand)\nInteractive session with teamwork and group works"
+            },
+            "4" : {
+                "title" : "Global Partnership Key Note Speaker",
+                "time" : "4:30 PM to 6:30 PM",
+                "speakers" : "1) Pradeep Sapkota (Managing and Executive Director, CNM)\n\n2) Ajit Baral (World Cyclist)"
+            }
+        }
+    },
+    "themeThree": {
+        "name": "Youth and Career Development",
+        "data": {
+            "1" : {
+                "title" : "Sustainable Development Goals",
+                "time" : "5:30 AM to 7:00 AM",
+                "speakers" : "1) Tracy Hanson (USA)"
+            },
+            "2" : {
+                "title" : "Art of Designing Career Workshop",
+                "time" : "12:30 PM to 1:45 PM",
+                "speakers" : "1) Zannatun N Eshita (Step-Up Foundation, Bangladesh)\n\n2) Cathy Cathy Sheppard (WSDA, New Zealand)\nInteractive session with teamwork and group works"
+            },
+            "3" : {
+                "title" : "How a Youth can Make a Change",
+                "time" : "2:00 PM to 4:00 PM",
+                "speakers" : "1) Abdus Miya, Founder/CEO, Leadership Corner\n\n2) Santosh Shah, President, Leadership Academy"
+            },
+            "4" : {
+                "title" : "Youth & Safe Migration Issues",
+                "time" : "4:30 PM to 6:30 PM",
+                "speakers" : "1) Dipak Aryal (Senior Program Officer, CTEVT)\n\n2) Tek Bahadur Chhetri (Executive Director, International Center, Pokhara University)\n\n3) Bishnuhari Pandey (President, ECAN)\nModerator: Pradip Rupakheti"
+            }
+        }
+    }
+}

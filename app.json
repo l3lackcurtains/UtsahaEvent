@@ -1,5 +1,21 @@
 {
   "expo": {
-    "sdkVersion": "25.0.0"
+   "name": "Utsaha Events",
+   "icon": "./src/assets/Icons/calendar.png",
+   "version": "1.0.0",
+   "slug": "utsaha-events",
+   "sdkVersion": "25.0.0",
+   "githubUrl": "https://github.com/l3lackcurtains/UtsahaEvent",
+   "orientation": "portrait",
+   "androidStatusBarColor": "#580e14",
+   "ios": {
+     "bundleIdentifier": "com.utsaha.events"
+   },
+   "android": {
+     "package": "com.utsaha.events"
+   },
+   "notification": {
+    "icon": "./src/assets/Icons/calendar.png"
+   }
   }
 }

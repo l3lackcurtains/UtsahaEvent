@@ -29,7 +29,9 @@ import config from '../utils/config'
 // react-redux-firebase config
 const rrfConfig = {
     userProfile: 'users',
-    events: 'events'
+    themeOne: 'themeOne',
+    themeTwo: 'themeTwo',
+    themeThree: 'themeThree'
 };
 
 if (!firebase.apps.length) {
@@ -103,7 +105,7 @@ const mapStateToProps = state => ({
 
 const AppWithNavigationState = connect(mapStateToProps)(App);
 
-const initialState2 = {};
+const initialState2 = { firebase: {} }
 const store = createStoreWithFirebase(appReducer, initialState2);
 const persistor = persistStore(store);
 

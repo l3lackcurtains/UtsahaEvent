@@ -1,9 +1,9 @@
 import { Permissions, Notifications } from 'expo';
 import { AsyncStorage } from 'react-native';
+import axios from 'axios'
 
 export default async () => {
     const previousToken = await AsyncStorage.getItem('pushToken');
-
     if (previousToken) {
         console.log('Previous Token', previousToken);
         return;
