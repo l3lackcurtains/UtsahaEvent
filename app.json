@@ -2,9 +2,10 @@
   "expo": {
    "name": "Utsaha Events",
    "icon": "./src/assets/Icons/calendar.png",
-   "version": "1.0.0",
+   "version": "1.0.1",
    "slug": "utsaha-events",
    "sdkVersion": "25.0.0",
+   "platforms": ["ios", "android"],
    "githubUrl": "https://github.com/l3lackcurtains/UtsahaEvent",
    "orientation": "portrait",
    "androidStatusBarColor": "#580e14",
@@ -12,7 +13,13 @@
      "bundleIdentifier": "com.utsaha.events"
    },
    "android": {
-     "package": "com.utsaha.events"
+     "package": "com.utsaha.events",
+     "playStoreUrl": "https://play.google.com/store/apps/details?id=com.utsaha.events&hl=en",
+     "versionCode": 2,
+     "permissions": []
+   },
+   "splash": {
+     "backgroundColor": "#e3e3e3"
    },
    "notification": {
     "icon": "./src/assets/Icons/calendar.png"
