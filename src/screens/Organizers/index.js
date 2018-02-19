@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { View, Image } from 'react-native'
-import { Container, Text, Content, Card } from 'native-base'
+import { View, Image, StyleSheet } from 'react-native'
+import { Container, Content, Card } from 'native-base'
 import { Col, Row, Grid } from 'react-native-easy-grid'
 
 import AppBar from '../../components/AppBar'
@@ -10,6 +10,21 @@ import image3 from '../../assets/organizers/rotaract.png'
 import image4 from '../../assets/organizers/rotary.png'
 import image5 from '../../assets/organizers/stepup.jpg'
 import image6 from '../../assets/organizers/tracknepal.png'
+
+const styles = StyleSheet.create({
+    cardWrap: {
+        paddingHorizontal: 8,
+    },
+    imageStyle: {
+        width: '90%',
+        height: 80,
+        marginHorizontal: 8,
+        marginVertical: 24
+    },
+    cardStyle: {
+        padding: 8,
+    }
+})
 
 class Organizers extends Component {
     static navigationOptions = () => ({
@@ -22,44 +37,54 @@ class Organizers extends Component {
             <View style={{ flex: 1 }}>
                 <AppBar title="Organizers" navigation={navigation} />
                 <Container>
-                    <Content>
-                        <Card>
+                    <Content style={styles.cardWrap}>
+                        <Card style={styles.cardStyle}>
                             <Grid>
                                 <Row>
-                                    <Image
-                                        source={image1}
-                                        style={{ width: 250 }}
-                                    />
-                                </Row>
-                                <Row>
-                                    <Image
-                                        source={image2}
-                                        style={{ width: 250 }}
-                                    />
+                                    <Col>
+                                        <Image
+                                            source={image1}
+                                            style={styles.imageStyle}
+                                            resizeMode="contain"
+                                        />
+                                    </Col>
+                                    <Col>
+                                        <Image
+                                            source={image2}
+                                            style={styles.imageStyle}
+                                            resizeMode="contain"
+                                        />
+                                    </Col>
                                 </Row>
                                 <Row>
                                     <Image
                                         source={image3}
-                                        style={{ width: 250 }}
+                                        style={styles.imageStyle}
+                                        resizeMode="contain"
                                     />
                                 </Row>
                                 <Row>
                                     <Image
                                         source={image4}
-                                        style={{ width: 250 }}
+                                        style={styles.imageStyle}
+                                        resizeMode="contain"
                                     />
                                 </Row>
                                 <Row>
-                                    <Image
-                                        source={image5}
-                                        style={{ width: 250 }}
-                                    />
-                                </Row>
-                                <Row>
-                                    <Image
-                                        source={image6}
-                                        style={{ width: 250 }}
-                                    />
+                                    <Col>
+                                        <Image
+                                            source={image5}
+                                            style={styles.imageStyle}
+                                            resizeMode="contain"
+                                        />
+                                    </Col>
+                                    <Col>
+                                        <Image
+                                            source={image6}
+                                            style={styles.imageStyle}
+                                            resizeMode="contain"
+                                        />
+                                    </Col>
                                 </Row>
                             </Grid>
                         </Card>

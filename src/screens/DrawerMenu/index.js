@@ -9,8 +9,9 @@ import {
     Left,
     Icon
 } from 'native-base'
-import { MaterialCommunityIcons, MaterialIcons, Octicons, FontAwesome } from '@expo/vector-icons'
+import { MaterialCommunityIcons, Octicons, FontAwesome } from '@expo/vector-icons'
 import leftImage from '../../assets/Icons/user.png'
+
 const styles = StyleSheet.create({
     wrapper: {
         backgroundColor: '#fff',
@@ -31,7 +32,7 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     headerInfo: {
-        marginLeft: 24,
+        marginLeft: 8,
     },
     headerTitle: {
         color: '#fff',
@@ -49,14 +50,20 @@ class DrawerMenu extends Component {
     state = {
         //
     }
+
+    changeScreen = (screen) => {
+        const { navigation, closeDrawer } = this.props
+        navigation.navigate(screen)
+        closeDrawer()
+    }
+
     render() {
-        const { navigation } = this.props
         return (
             <Container style={styles.wrapper}>
                 <View style={styles.navHeader}>
                     <View style={styles.headerContent}>
                         <Image
-                            style={{ width: 50, height: 50 }}
+                            style={{ width: 42, height: 42 }}
                             source={leftImage}
                         />
                         <View style={styles.headerInfo}>
@@ -67,7 +74,7 @@ class DrawerMenu extends Component {
                 </View>
                 <View style={styles.menus}>
                     <List>
-                        <ListItem icon first onPress={() => navigation.navigate('HomeScreen')}>
+                        <ListItem icon first onPress={() => this.changeScreen('HomeScreen')}>
                             <Left>
                                 <MaterialCommunityIcons name="home" size={24} color="#787878" />
                             </Left>
@@ -75,9 +82,7 @@ class DrawerMenu extends Component {
                                 <Text>Home</Text>
                             </Body>
                         </ListItem>
-                        {
-                            /*
-                        <ListItem icon onPress={() => navigation.navigate('Organizers')}>
+                        <ListItem icon onPress={() => this.changeScreen('Organizers')}>
                             <Left>
                                 <Octicons name="organization" size={24} color="#787878" />
                             </Left>
@@ -85,7 +90,7 @@ class DrawerMenu extends Component {
                                 <Text>Organizers</Text>
                             </Body>
                         </ListItem>
-                        <ListItem icon onPress={() => navigation.navigate('Partners')}>
+                        <ListItem icon onPress={() => this.changeScreen('Partners')}>
                             <Left>
                                 <FontAwesome name="handshake-o" size={24} color="#787878" />
                             </Left>
@@ -93,7 +98,9 @@ class DrawerMenu extends Component {
                                 <Text>Our Partners</Text>
                             </Body>
                         </ListItem>
-                        <ListItem icon onPress={() => navigation.navigate('Supporters')}>
+                        {
+                            /*
+                        <ListItem icon onPress={() => this.changeScreen('Supporters')}>
                             <Left>
                                 <FontAwesome name="support" size={24} color="#787878" />
                             </Left>
@@ -101,7 +108,7 @@ class DrawerMenu extends Component {
                                 <Text>Supporters</Text>
                             </Body>
                         </ListItem>
-                        <ListItem icon onPress={() => navigation.navigate('Contact')}>
+                        <ListItem icon onPress={() => this.changeScreen('Contact')}>
                             <Left>
                                 <MaterialIcons name="contacts" size={24} color="#787878" />
                             </Left>
@@ -111,7 +118,7 @@ class DrawerMenu extends Component {
                         </ListItem>
                         */
                         }
-                        <ListItem icon last onPress={() => navigation.navigate('About')}>
+                        <ListItem icon last onPress={() => this.changeScreen('About')}>
                             <Left>
                                 <MaterialCommunityIcons name="heart-outline" size={24} color="#787878" />
                             </Left>

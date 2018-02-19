@@ -41,12 +41,16 @@ const styles = StyleSheet.create({
     bellIcon: {
         width: 40,
         height: 40,
-        backgroundColor: '#fff'
+        backgroundColor: '#fff',
+        position: 'absolute',
+        top: 16,
+        right: 12
     },
     themeTitle: {
         fontSize: 18,
         marginVertical: 8,
-        fontWeight: '600'
+        fontWeight: '600',
+        marginRight: 54
     }
 })
 
@@ -130,7 +134,7 @@ class Home extends Component {
         return (
             <Drawer
                 ref={(ref) => { this.drawer = ref }}
-                content={<DrawerMenu navigation={navigation} />}
+                content={<DrawerMenu navigation={navigation} closeDrawer={this.closeDrawer} />}
                 onClose={() => this.closeDrawer()}
             >
                 <View style={styles.statusBar} />
@@ -145,7 +149,7 @@ class Home extends Component {
                     </Body>
                 </Header>
                 <Container>
-                    <Tabs initialPage={0} locked>
+                    <Tabs initialPage={0}>
                         <Tab heading="Theme One">
                             {
                                 !isLoaded(themeOne) ? null :
@@ -153,21 +157,35 @@ class Home extends Component {
                                         header={
                                             <View style={styles.tabHeader}>
                                                 <Text style={styles.themeTitle}>{themeOne.name}</Text>
-                                                <Button light block rounded disabled={theme.isLoading} style={styles.bellIcon}>
-                                                    {
-                                                        bell === 1
-                                                            ? <MaterialCommunityIcons
+                                                {
+                                                    bell === 1
+                                                        ?
+                                                        <Button
+                                                            light
+                                                            block
+                                                            disabled={theme.isLoading}
+                                                            style={styles.bellIcon}
+                                                            onPress={this.removeBell}
+                                                        >
+                                                            <MaterialCommunityIcons
                                                                 name="bell-ring"
                                                                 size={25}
-                                                                onPress={this.removeBell}
                                                             />
-                                                            : <MaterialCommunityIcons
+                                                        </Button>
+                                                        :
+                                                        <Button
+                                                            light
+                                                            block
+                                                            disabled={theme.isLoading}
+                                                            style={styles.bellIcon}
+                                                            onPress={() => this.changeBell(1)}
+                                                        >
+                                                            <MaterialCommunityIcons
                                                                 name="bell-ring-outline"
                                                                 size={25}
-                                                                onPress={() => this.changeBell(1)}
                                                             />
-                                                    }
-                                                </Button>
+                                                        </Button>
+                                                }
                                             </View>
                                         }
                                         session={themeOne.data}
@@ -181,21 +199,35 @@ class Home extends Component {
                                         header={
                                             <View style={styles.tabHeader}>
                                                 <Text style={styles.themeTitle}>{themeTwo.name}</Text>
-                                                <Button light block rounded disabled={theme.isLoading} style={styles.bellIcon}>
-                                                    {
-                                                        bell === 2
-                                                            ? <MaterialCommunityIcons
+                                                {
+                                                    bell === 2
+                                                        ?
+                                                        <Button
+                                                            light
+                                                            block
+                                                            disabled={theme.isLoading}
+                                                            style={styles.bellIcon}
+                                                            onPress={this.removeBell}
+                                                        >
+                                                            <MaterialCommunityIcons
                                                                 name="bell-ring"
                                                                 size={25}
-                                                                onPress={this.removeBell}
                                                             />
-                                                            : <MaterialCommunityIcons
+                                                        </Button>
+                                                        :
+                                                        <Button
+                                                            light
+                                                            block
+                                                            disabled={theme.isLoading}
+                                                            style={styles.bellIcon}
+                                                            onPress={() => this.changeBell(2)}
+                                                        >
+                                                            <MaterialCommunityIcons
                                                                 name="bell-ring-outline"
                                                                 size={25}
-                                                                onPress={() => this.changeBell(2)}
                                                             />
-                                                    }
-                                                </Button>
+                                                        </Button>
+                                                }
                                             </View>
                                         }
                                         session={themeTwo.data}
@@ -209,21 +241,35 @@ class Home extends Component {
                                         header={
                                             <View style={styles.tabHeader}>
                                                 <Text style={styles.themeTitle}>{themeThree.name}</Text>
-                                                <Button light block rounded disabled={theme.isLoading} style={styles.bellIcon}>
-                                                    {
-                                                        bell === 3
-                                                            ? <MaterialCommunityIcons
+                                                {
+                                                    bell === 3
+                                                        ?
+                                                        <Button
+                                                            light
+                                                            block
+                                                            disabled={theme.isLoading}
+                                                            style={styles.bellIcon}
+                                                            onPress={this.removeBell}
+                                                        >
+                                                            <MaterialCommunityIcons
                                                                 name="bell-ring"
                                                                 size={25}
-                                                                onPress={this.removeBell}
                                                             />
-                                                            : <MaterialCommunityIcons
+                                                        </Button>
+                                                        :
+                                                        <Button
+                                                            light
+                                                            block
+                                                            disabled={theme.isLoading}
+                                                            style={styles.bellIcon}
+                                                            onPress={() => this.changeBell(3)}
+                                                        >
+                                                            <MaterialCommunityIcons
                                                                 name="bell-ring-outline"
                                                                 size={25}
-                                                                onPress={() => this.changeBell(3)}
                                                             />
-                                                    }
-                                                </Button>
+                                                        </Button>
+                                                }
                                             </View>
                                         }
                                         session={themeThree.data}

@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
-import { StyleSheet, View } from 'react-native'
-import { Container, Text, Card } from 'native-base'
+import { StyleSheet, Image, View } from 'react-native'
+import { Container, Text, Card, CardItem, Content } from 'native-base'
+import { Grid, Col } from 'react-native-easy-grid'
 
 import AppBar from '../../components/AppBar'
+import utsahaLogo from '../../assets/Icons/logo.png'
 
 const styles = StyleSheet.create({
     orgName: {
@@ -11,11 +13,11 @@ const styles = StyleSheet.create({
         marginBottom: 16
     },
     cardWrap: {
-        margin: 8,
-        height: 200,
+        padding: 8,
     },
     cardStyle: {
-        padding: 16
+        paddingHorizontal: 16,
+        paddingVertical: 36,
     }
 })
 
@@ -27,16 +29,34 @@ class About extends Component {
     render() {
         const { navigation } = this.props
         return (
-            <Container>
+            <View style={{ flex: 1 }}>
                 <AppBar title="About" navigation={navigation} />
-                <View style={styles.cardWrap}>
-                    <Card style={styles.cardStyle}>
-                        <Text style={styles.orgName}>Utsaha Technologies</Text>
-                        <Text>Contact: +977 061-62690</Text>
-                        <Text>Location: NewRoard, Pokhara</Text>
-                    </Card>
-                </View>
-            </Container>
+                <Container>
+                    <Content style={styles.cardWrap}>
+                        <Card style={styles.cardStyle}>
+                            <CardItem>
+                                <Grid>
+                                    <Col size={1}>
+                                        <Image
+                                            source={utsahaLogo}
+                                            style={{
+                                                width: '90%',
+                                                height: 90,
+                                            }}
+                                            resizeMode="contain"
+                                        />
+                                    </Col>
+                                    <Col size={3}>
+                                        <Text style={styles.orgName}>Utsaha Technologies</Text>
+                                        <Text>Contact: +977 061-62690</Text>
+                                        <Text>Location: NewRoard, Pokhara</Text>
+                                    </Col>
+                                </Grid>
+                            </CardItem>
+                        </Card>
+                    </Content>
+                </Container>
+            </View>
         )
     }
 }
